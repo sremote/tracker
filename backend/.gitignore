@@ -1,0 +1,27 @@
+# Virtual Environment
+venv/
+include/
+Lib/
+Scripts/
+bin/
+lib64/
+.Python
+
+# IDE Files
+.vscode
+.idea/
+*.iml
+
+# Complied Python Files
+*.pyc
+
+# Environment Variables
+.Environment
+.env
+
+# Database
+applications.db
+
+# Node Files
+node_modules/
+/dist/
