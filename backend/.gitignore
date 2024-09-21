@@ -11,6 +11,7 @@ lib64/
 .vscode
 .idea/
 *.iml
+*.cfg
 
 # Complied Python Files
 *.pyc
