@@ -27,7 +27,7 @@ def create_application():
         
         db.session.add(application)
         db.session.commit()
-        return jsonify({"msg": "Application saved.."}), 201
+        return jsonify(application.to_json()), 201
     except Exception as e:
         db.session.rollback()
         return jsonify({"error": str(e)}), 500
@@ -57,11 +57,11 @@ def update_application(id):
             return jsonify({"msg": "Application not found."}), 404
         data = request.json
 
+        application.company_name = data.get("companyName", application.company_name)
         application.role = data.get("role", application.role)
         application.description = data.get("description", application.description)
         application.location = data.get("location", application.location)
-        application.applied_date = data.get("applied_date", application.applied_date)
-        application.active = data.get("active", application.active)
+        application.applied_date = data.get("appliedDate", application.applied_date)
 
         db.session.commit()
         return jsonify(application.to_json()), 200
